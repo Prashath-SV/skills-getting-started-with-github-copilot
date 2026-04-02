@@ -65,6 +65,112 @@ section h3 {
   background-color: #f9f9f9;
 }
 
+.participants-section {
+  margin-top: 12px;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.participants-section strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.participants-list {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  color: #444;
+}
+
+.participants-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f2f7ff;
+  border: 1px solid #dfe6f5;
+  border-radius: 4px;
+  padding: 6px 8px;
+  margin-bottom: 6px;
+  transition: transform 0.6s ease, opacity 0.6s ease, background-color 0.6s ease;
+}
+
+.participants-list li.removing {
+  animation: fly-to-bin 0.8s forwards;
+}
+
+.participants-list li.removing .participant-email {
+  animation: email-fly-to-bin 0.8s ease-in forwards;
+  display: inline-block;
+}
+
+@keyframes email-fly-to-bin {
+  0% {
+    opacity: 1;
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(70px) translateY(-15px) scale(0.5);
+  }
+}
+
+@keyframes fly-to-bin {
+  0% {
+    opacity: 1;
+    background-color: #f2f7ff;
+  }
+  50% {
+    background-color: #ffe0e0;
+  }
+  100% {
+    opacity: 0;
+    background-color: #ffebee;
+  }
+}
+.participant-email {
+  overflow-wrap: anywhere;
+}
+
+.participant-remove {
+  border: none;
+  background-color: #f44336;
+  color: #fff;
+  font-size: 16px;
+  width: 30px;
+  height: 30px;
+  line-height: 1;
+  padding: 4px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.participant-remove:hover {
+  background-color: #c62828;
+  transform: scale(1.08);
+}
+
+
+.participants-list li {
+  margin-bottom: 4px;
+}
+
+.no-participants {
+  color: #757575;
+  font-style: italic;
+}
+
 .activity-card h4 {
   margin-bottom: 10px;
   color: #0066cc;
